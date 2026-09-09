@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MineTech Control</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h1>⛏ TechGirls</h1>
+            <p>Controle de Mineração 4.0</p>
+        </div>
+
+        <div class="menu">
+
+            <button class="active"
+                onclick="abrirPagina('dashboard', this)">
+                📊 Dashboard
+            </button>
+
+            <button onclick="abrirPagina('sensores', this)">
+                🌡 Sensores
+            </button>
+
+            <button onclick="abrirPagina('equipamentos', this)">
+                🚛 Equipamentos
+            </button>
+
+            <button onclick="abrirPagina('comunicacao', this)">
+                📡 Comunicação
+            </button>
+
+            <button onclick="abrirPagina('alertas', this)">
+                ⚠ Alertas
+            </button>
+
+            <button onclick="abrirPagina('resultados', this)">
+                📈 Resultados
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="page active">
+
+            <div class="top">
+                <h2>Dashboard</h2>
+                <p>Monitoramento inteligente da operação de mineração</p>
+            </div>
+
+            <div class="hero">
+
+                <h2>Mineração Inteligente</h2>
+
+                <p>
+                    Mais segurança, eficiência e sustentabilidade
+                    através do monitoramento em tempo real.
+                </p>
+
+                <button class="btn"
+                    onclick="simularMonitoramento()">
+                    ▶ SIMULAR MONITORAMENTO
+                </button>
+
+                <div class="ultima">
+                    Última atualização:
+                    <span id="ultimaAtualizacao">
+                        Aguardando simulação
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>⛽ Combustível</h3>
+                    <div class="valor azul">
+                        <span id="combustivel">72</span>%
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📦 Produtividade</h3>
+                    <div class="valor verde">
+                        <span id="produtividade">88</span>%
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🛡 Segurança</h3>
+                    <div class="valor verde">
+                        <span id="seguranca">95</span>%
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📡 Dispositivos</h3>
+                    <div class="valor laranja">
+                        <span id="dispositivos">20</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="mapa">
+
+                <h3>🗺 Área de Operação</h3>
+
+                <div class="estrada"></div>
+
+                <div class="caminhao" id="caminhao">
+                    🚛
+                </div>
+
+                <div class="escavadeira">
+                    🚜
+                </div>
+
+                <div class="sensor sensor1">
+                    📍
+                </div>
+
+                <div class="sensor sensor2">
+                    📍
+                </div>
+
+                <div class="torre">
+                    📡
+                </div>
+
+            </div>
+
+
+            <div class="grid2">
+
+                <div class="box">
+
+                    <h3>🚛 Equipamentos</h3>
+
+                    <div class="equipamento">
+                        <span>Caminhão 01</span>
+
+                        <span class="status"
+                            id="statusCaminhao">
+                            ● Operando
+                        </span>
+                    </div>
+
+                    <div class="equipamento">
+                        <span>Escavadeira 01</span>
+
+                        <span class="status"
+                            id="statusEscavadeira">
+                            ● Operando
+                        </span>
+                    </div>
+
+                    <div class="equipamento">
+                        <span>Trator 01</span>
+
+                        <span class="status">
+                            ● Operando
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="box">
+
+                    <h3>🌡 Sensores</h3>
+
+                    <div class="sensor-card">
+
+                        <span>Temperatura</span>
+
+                        <span class="numero">
+                            <span id="temperatura">30</span> °C
+                        </span>
+
+                    </div>
+
+                    <div class="sensor-card">
+
+                        <span>Umidade do solo</span>
+
+                        <span class="numero">
+                            <span id="umidade">50</span>%
+                        </span>
+
+                    </div>
+
+                    <div class="sensor-card">
+
+                        <span>Vibração</span>
+
+                        <span class="numero" id="vibracao">
+                            Normal
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SENSORES -->
+
+        <section id="sensores" class="page">
+
+            <div class="top">
+
+                <h2>🌡 Sensores</h2>
+
+                <p>
+                    Monitoramento dos sensores instalados
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Temperatura</h3>
+
+                    <div class="valor">
+                        <span id="tempSensor">30</span> °C
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Umidade</h3>
+
+                    <div class="valor">
+                        <span id="umidadeSensor">50</span>%
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Vibração</h3>
+
+                    <div class="valor verde">
+                        Normal
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>GPS</h3>
+
+                    <div class="valor verde">
+                        Ativo
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="box">
+
+                <h3>Sensores instalados</h3>
+
+                <div class="sensor-card">
+                    🌡 Sensor de temperatura
+                    <strong>Online</strong>
+                </div>
+
+                <div class="sensor-card">
+                    💧 Sensor de umidade
+                    <strong>Online</strong>
+                </div>
+
+                <div class="sensor-card">
+                    📳 Sensor de vibração
+                    <strong>Online</strong>
+                </div>
+
+                <div class="sensor-card">
+                    📍 Sensor GPS
+                    <strong>Online</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EQUIPAMENTOS -->
+
+        <section id="equipamentos" class="page">
+
+            <div class="top">
+
+                <h2>🚛 Equipamentos</h2>
+
+                <p>
+                    Controle dos veículos e máquinas
+                </p>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Equipamento</th>
+                        <th>Tipo</th>
+                        <th>Combustível</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>Caminhão 01</td>
+                        <td>Transporte</td>
+                        <td>Diesel</td>
+                        <td class="status">Operando</td>
+                    </tr>
+
+                    <tr>
+                        <td>Escavadeira 01</td>
+                        <td>Escavação</td>
+                        <td>Diesel</td>
+                        <td class="status">Operando</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trator 01</td>
+                        <td>Apoio</td>
+                        <td>Diesel</td>
+                        <td class="status">Operando</td>
+                    </tr>
+
+                    <tr>
+                        <td>Caminhão 02</td>
+                        <td>Transporte</td>
+                        <td>Diesel</td>
+                        <td class="status">Operando</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- COMUNICAÇÃO -->
+
+        <section id="comunicacao" class="page">
+
+            <div class="top">
+
+                <h2>📡 Comunicação</h2>
+
+                <p>
+                    Conectividade entre máquinas,
+                    sensores e central
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>📶 4G / 5G</h3>
+                    <div class="valor verde">Ativo</div>
+                </div>
+
+                <div class="card">
+                    <h3>🛰 Satélite</h3>
+                    <div class="valor verde">Ativo</div>
+                </div>
+
+                <div class="card">
+                    <h3>📡 IoT</h3>
+                    <div class="valor verde">Online</div>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Central</h3>
+                    <div class="valor verde">Conectada</div>
+                </div>
+
+            </div>
+
+
+            <div class="box">
+
+                <h3>Fluxo de comunicação</h3>
+
+                <p>
+                    Sensores → Rede IoT → Comunicação →
+                    Sistema de monitoramento →
+                    Central de controle
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALERTAS -->
+
+        <section id="alertas" class="page">
+
+            <div class="top">
+
+                <h2>⚠ Alertas</h2>
+
+                <p>
+                    Eventos detectados pelo sistema
+                </p>
+
+            </div>
+
+
+            <div class="alerta ok">
+
+                <strong>✓ Sistema normal</strong>
+
+                <p>
+                    Nenhuma falha crítica detectada.
+                </p>
+
+            </div>
+
+
+            <div class="alerta">
+
+                <strong>⚠ Monitoramento preventivo</strong>
+
+                <p>
+                    O sistema acompanha temperatura,
+                    vibração, combustível e produtividade.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTADOS -->
+
+        <section id="resultados" class="page">
+
+            <div class="top">
+
+                <h2>📈 Resultados</h2>
+
+                <p>
+                    Benefícios esperados com a automação
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <h3>🛡 Maior segurança</h3>
+
+                <p>
+                    Monitoramento contínuo das máquinas
+                    e identificação de situações de risco.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <h3>⛽ Redução do consumo de combustível</h3>
+
+                <p>
+                    Acompanhamento do uso de combustível
+                    para reduzir desperdícios.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <h3>📊 Maior produtividade</h3>
+
+                <p>
+                    Dados em tempo real ajudam na tomada
+                    de decisões e no controle da operação.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <h3>🌱 Sustentabilidade</h3>
+
+                <p>
+                    Redução de desperdícios e possibilidade
+                    de diminuir emissões.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <h3>💰 Redução de custos</h3>
+
+                <p>
+                    Monitoramento preventivo ajuda a reduzir
+                    paradas e gastos operacionais.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
